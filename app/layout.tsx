@@ -19,6 +19,7 @@ export default function RootLayout({
       <head>
       <title>Peerpay</title>
        <link rel="icon" href="/favicon.svg" />
+       <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
