@@ -514,7 +514,7 @@ function Navbar() {
                       />
                     </svg>
                     <span className="ml-3 text-base font-medium text-gray-900">
-                      Faq
+                      Developer
                     </span>
                   </Link>
 
@@ -533,7 +533,7 @@ function Navbar() {
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
-                  Partner
+                  Marchants
                 </Link>
                 <Link
                   href="#"
@@ -563,7 +563,7 @@ function Navbar() {
                   href="#"
                   className="text-base font-medium text-gray-900 hover:text-gray-700"
                 >
-                  Legal Terms
+                  Support
                 </Link>
                 <Link
                   href="#"
