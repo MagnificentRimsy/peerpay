@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import logo from "../../../../public/images/logo.svg"
+import logo from "../../../../public/images/logo.svg";
 
 
 function Navbar() {
@@ -346,12 +346,12 @@ function Navbar() {
                 href="#"
                 className="text-base font-light text-black hover:text-secondary"
               >
-                Faqs
+                Developers
               </Link>
             </nav>
             <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
               <Link href="/login"
-                className="whitespace-nowrap text-base font-light border border-primary rounded-md  px-4 py-2 text-gray-500 hover:text-secondary "
+                className="whitespace-nowrap text-base font-normal border border-primary hover:border-secondary rounded-md  px-4 py-2 text-gray-500 hover:text-white hover:bg-secondary "
               >
                 Sign in
 

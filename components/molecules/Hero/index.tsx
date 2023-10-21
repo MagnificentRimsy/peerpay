@@ -22,7 +22,7 @@ function Hero() {
             <div className="lg:w-1/2">
                 <h1 className="lg:text-4xl  text-2xl  text-black font-bold mb-4">Welcome to peerpay
                     digital assets.</h1>
-                <p className="lg:text-lg text-sm font-light mb-6 text-gray-500 md:mr-4">
+                <p className="lg:text-sm text-sm font-light mb-6 text-gray-500 md:mr-4 md:w-96">
                     PeerPay innovates African credit, bridges security gaps, and aims to be a trusted financial partner.                </p>
                 <div className="flex flex-col items-start md:flex-row md:space-x-4 mt-4">
                     <Link href="/login" className="w-full md:w-auto px-8 py-3 bg-primary hover:bg-secondary text-white rounded-md mb-4 md:mb-0 md:mt-6 md:ml-0">
