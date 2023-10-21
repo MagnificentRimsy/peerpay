@@ -81,7 +81,7 @@ const FeaturesSection = () => {
     <>
         <div className="text-center my-8">
         <h1 className="lg:text-4xl  text-2xl  text-black font-bold mb-4">How Peerpay Works.</h1>
-            <p className="lg:text-sm text-sm font-light mb-4 text-gray-500 md:mx-60">PeerPay streamlines credit and loan transactions with transparency and efficiency. 
+            <p className="lg:text-sm text-sm font-light mb-2 text-gray-500 md:mx-60 mx-3">PeerPay streamlines credit and loan transactions with transparency and efficiency. 
            <span className="hidden lg:block">It offers an AI-generated reliability score for creditors, enabling informed decisions based on financial capacity.</span> </p>
         </div>
         <div className="flex items-center justify-center py-16 lg:mx-10 pl-16 p-16">
