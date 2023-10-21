@@ -1,9 +1,28 @@
 // components/AnimatedSection.js
-
-import React from 'react';
+"use client";
+import React, { useState, useEffect } from 'react';
+import ContentLoader from 'react-content-loader';
 import Image from 'next/image'
 
+const ShimmerCard = () => (
+  <ContentLoader 
+    speed={2}
+    width={300}
+    height={300}
+    viewBox="0 0 300 300"
+    backgroundColor="#f3f3f3"
+    foregroundColor="#ecebeb"
+  >
+    <rect x="0" y="0" rx="30" ry="10" width="200" height="150" />
+    <rect x="10" y="170" rx="3" ry="3" width="180" height="10" />
+    <rect x="10" y="190" rx="3" ry="3" width="180" height="10" />
+    <rect x="10" y="210" rx="3" ry="3" width="180" height="10" />
+  </ContentLoader>
+);
+
+
 const FeaturesSection = () => {
+  const [loading, setLoading] = useState(true);
   const cardsData = [
     {   id:1,
         tag: "lending",
@@ -47,6 +66,15 @@ const FeaturesSection = () => {
       description: 'This efficiency not only saves time and money for individuals, businesses, and government agencies but also frees resources to concentrate on more productive activities, enhancing overall financial management.',
     },
   ];
+  useEffect(() => {
+    // Simulating loading data with a timeout
+    const delay = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(delay);
+  }, []);
+  
 
   
   return (
@@ -64,26 +92,33 @@ const FeaturesSection = () => {
             <div className="lg:w-2/2 grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Cards*/}
 
-            {cardsData.map((card) => (
-            <div key={card.id} className="bg-gray-100 p-4 shadow-md rounded-md border border-gray-300">
-            
-                <Image 
-                    
-                    width={0}
-                    height={0}
-                    src={card.icon}
-                    alt={`Card Icon`}
-                    className="w-20 h-20 rounded-none mr-2 object-contain"
-                    />
-                <div className="flex items-center my-4">
-                <p className="text-normal font-normal">{card.tag}</p>
-                </div> 
-                <div className="flex items-center my-2">
-                <h3 className="text-lg font-semibold">{card.title}</h3>
-                </div>
-                <p className="text-gray-600 font-light text-sm">{card.description}</p>
+            {loading ? (
+        Array.from({ length: 6 }).map((_, index) => (
+          <div key={index} className="bg-gray-100 p-4 shadow-md rounded-md border border-gray-300">
+            <ShimmerCard />
+          </div>
+        ))
+      ) : (
+        cardsData.map((card) => (
+          <div key={card.id} className="bg-gray-100 p-4 shadow-md rounded-md border border-gray-300">
+            {/* Use your actual data here */}
+            <Image
+              width={0}
+              height={0}
+              src={card.icon}
+              alt={`Card Icon`}
+              className="w-20 h-20 rounded-none mr-2 object-contain"
+            />
+            <div className="flex items-center my-4">
+              <p className="text-normal font-normal">{card.tag}</p>
             </div>
-            ))}
+            <div className="flex items-center my-2">
+              <h3 className="text-lg font-semibold">{card.title}</h3>
+            </div>
+            <p className="text-gray-600 font-light text-sm">{card.description}</p>
+          </div>
+        ))
+      )}
 
             {/* End of cards */}
         
